@@ -1,0 +1,328 @@
+from typing import Optional
+
+class Checkout:
+    def __init__(self, library: Library):
+        self.library = library
+
+    def checkout_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if not book.available:
+            raise ValueError("Book is not available")
+        book.available = False
+        self.library.book_storage.save_data()
+
+    def checkin_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if book.available:
+            raise ValueError("Book is already available")
+        book.available = True
+        self.library.book_storage.save_data()
+
+    def find_user(self, user_id: str) -> Optional[User]:
+        for user in self.library.user_storage.data:
+            if user.user_id == user_id:
+                return user
+        return None
+
+    def find_book(self, isbn: str) -> Optional[Book]:
+        for book in self.library.book_storage.data:
+            if book.isbn == isbn:
+                return book
+        return None
+from typing import Optional
+
+class Checkout:
+    def __init__(self, library: Library):
+        self.library = library
+
+    def checkout_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if not book.available:
+            raise ValueError("Book is not available")
+        book.available = False
+        self.library.book_storage.save_data()
+
+    def checkin_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if book.available:
+            raise ValueError("Book is already available")
+        book.available = True
+        self.library.book_storage.save_data()
+
+    def find_user(self, user_id: str) -> Optional[User]:
+        for user in self.library.user_storage.data:
+            if user.user_id == user_id:
+                return user
+        return None
+
+    def find_book(self, isbn: str) -> Optional[Book]:
+        for book in self.library.book_storage.data:
+            if book.isbn == isbn:
+                return book
+        return None
+from typing import Optional
+
+class Checkout:
+    def __init__(self, library: Library):
+        self.library = library
+
+    def checkout_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if not book.available:
+            raise ValueError("Book is not available")
+        book.available = False
+        self.library.book_storage.save_data()
+
+    def checkin_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if book.available:
+            raise ValueError("Book is already available")
+        book.available = True
+        self.library.book_storage.save_data()
+
+    def find_user(self, user_id: str) -> Optional[User]:
+        for user in self.library.user_storage.data:
+            if user.user_id == user_id:
+                return user
+        return None
+
+    def find_book(self, isbn: str) -> Optional[Book]:
+        for book in self.library.book_storage.data:
+            if book.isbn == isbn:
+                return book
+        return None
+from typing import Optional
+
+class Checkout:
+    def __init__(self, library: Library):
+        self.library = library
+
+    def checkout_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if not book.available:
+            raise ValueError("Book is not available")
+        book.available = False
+        self.library.book_storage.save_data()
+
+    def checkin_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if book.available:
+            raise ValueError("Book is already available")
+        book.available = True
+        self.library.book_storage.save_data()
+
+    def find_user(self, user_id: str) -> Optional[User]:
+        for user in self.library.user_storage.data:
+            if user.user_id == user_id:
+                return user
+        return None
+
+    def find_book(self, isbn: str) -> Optional[Book]:
+        for book in self.library.book_storage.data:
+            if book.isbn == isbn:
+                return book
+        return None
+from typing import Optional
+
+class Checkout:
+    def __init__(self, library: Library):
+        self.library = library
+
+    def checkout_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if not book.available:
+            raise ValueError("Book is not available")
+        book.available = False
+        self.library.book_storage.save_data()
+
+    def checkin_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if book.available:
+            raise ValueError("Book is already available")
+        book.available = True
+        self.library.book_storage.save_data()
+
+    def find_user(self, user_id: str) -> Optional[User]:
+        for user in self.library.user_storage.data:
+            if user.user_id == user_id:
+                return user
+        return None
+
+    def find_book(self, isbn: str) -> Optional[Book]:
+        for book in self.library.book_storage.data:
+            if book.isbn == isbn:
+                return book
+        return None
+from typing import Optional
+
+class Checkout:
+    def __init__(self, library: Library):
+        self.library = library
+
+    def checkout_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if not book.available:
+            raise ValueError("Book is not available")
+        book.available = False
+        self.library.book_storage.save_data()
+
+    def checkin_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if book.available:
+            raise ValueError("Book is already available")
+        book.available = True
+        self.library.book_storage.save_data()
+
+    def find_user(self, user_id: str) -> Optional[User]:
+        for user in self.library.user_storage.data:
+            if user.user_id == user_id:
+                return user
+        return None
+
+    def find_book(self, isbn: str) -> Optional[Book]:
+        for book in self.library.book_storage.data:
+            if book.isbn == isbn:
+                return book
+        return None
+from typing import Optional
+
+class Checkout:
+    def __init__(self, library: Library):
+        self.library = library
+
+    def checkout_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if not book.available:
+            raise ValueError("Book is not available")
+        book.available = False
+        self.library.book_storage.save_data()
+
+    def checkin_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if book.available:
+            raise ValueError("Book is already available")
+        book.available = True
+        self.library.book_storage.save_data()
+
+    def find_user(self, user_id: str) -> Optional[User]:
+        for user in self.library.user_storage.data:
+            if user.user_id == user_id:
+                return user
+        return None
+
+    def find_book(self, isbn: str) -> Optional[Book]:
+        for book in self.library.book_storage.data:
+            if book.isbn == isbn:
+                return book
+        return None
+from typing import Optional
+
+class Checkout:
+    def __init__(self, library: Library):
+        self.library = library
+
+    def checkout_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if not book.available:
+            raise ValueError("Book is not available")
+        book.available = False
+        self.library.book_storage.save_data()
+
+    def checkin_book(self, user_id: str, isbn: str):
+        user = self.find_user(user_id)
+        if user is None:
+            raise ValueError("User not found")
+        book = self.find_book(isbn)
+        if book is None:
+            raise ValueError("Book not found")
+        if book.available:
+            raise ValueError("Book is already available")
+        book.available = True
+        self.library.book_storage.save_data()
+
+    def find_user(self, user_id: str) -> Optional[User]:
+        for user in self.library.user_storage.data:
+            if user.user_id == user_id:
+                return user
+        return None
+
+    def find_book(self, isbn: str) -> Optional[Book]:
+        for book in self.library.book_storage.data:
+            if book.isbn == isbn:
+                return book
+        return None

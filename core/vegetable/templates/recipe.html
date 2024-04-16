@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block start %}
+    <div class="container mt-5">
+        <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data"> <!----- enctype is for image to be uploaded -->
+            {% csrf_token %}  <!-- this is for frontend req is same from server decive like ors-->
+            <h3>Add Recipe</h3>
+            <hr>
+            <div class="mb-3">
+              <label for="exampleInputEmail1">Recipe Name</label>
+              <input type="text" class="form-control"  required placeholder="Enter name" name="recipe_name">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1">Description</label>
+              <input type="text" class="form-control"  required ="exampleInputPassword1" placeholder="description" name="recipe_description">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1">Upload Image</label>
+              <input type="file" class="form-control" id="exampleInputPassword1" placeholder="recipe image" name="recipe_image">
+            </div>
+          
+            <button type="submit" class="btn btn-success">Add Recipe</button>
+          </form>
+    </div>
+
+    <h3>Welcome to REcipe's Dashboard</h3>
+    <table class="container">
+        <tr>
+            <td>SR.No</td>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Image</td>
+            <td>Action</td>
+        </tr>
+        {% for recipe in recipes %}
+         <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{recipe.name}}</td>
+            <td>{{recipe.description}}</td>
+            <td> <img src="/media/{{recipe.image}}" alt="" style="height: 90px;"></td>
+            <td><a href="/delete-recipe/{{recipe.id}}/" class="btn btn-danger">Delete</a></td>
+         </tr>
+        {% endfor %}
+    </table>
+
+
+
+{% endblock %}
